@@ -1,29 +1,15 @@
 # wd-input
 
-## Project setup
+## Import Basic
 ```
-npm install
-```
+import { WdInput } from 'wd-input';
+import 'wd-input/dist/wd.css';
 
-### Compiles and hot-reloads for development
+<WdInput v-model="value"></WdInput>
 ```
-npm run serve
+## Bootstrap
 ```
+import { WdInputBootstrap } from 'wd-input';
 
-### Compiles and minifies for production
+<WdInputBootstrap v-model="value"></WdInputBootstrap>
 ```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

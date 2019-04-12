@@ -1,24 +1,38 @@
 {
   "name": "wd-input",
   "version": "0.1.0",
-  "private": true,
+  "repository":  "junathaan/wd-input",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build-bundle": "vue-cli-service build --target lib --name wd ./src/plugin.js",
+    "lint": "vue-cli-service lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
+  "files": [
+    "src/*",
+    "dist/*",
+    "*.json",
+    "*.js"
+  ],
+  "main": "./dist/wd.common.js",
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-eslint": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "@storybook/vue": "^5.0.6",
+    "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-links": "^5.0.6",
+    "@storybook/addons": "^5.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5"
   },
   "eslintConfig": {
     "root": true,
