@@ -12,4 +12,8 @@
     </div>
 </template>
 
-<script src="./WdInput.js"></script>
+<script>
+  import WdInputFactory  from './WdInputFactory'
+  const WdInput = WdInputFactory()
+  export default WdInput
+</script>

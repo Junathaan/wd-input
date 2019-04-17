@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/vue';
 
 import WdInput from '../src/WdInput.vue';
 import WdInputBootstrap from '../src/WdInputBootstrap.vue';
+// import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
 
 storiesOf('WdInput', module)
   .add('Basic', () => ({

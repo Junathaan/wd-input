@@ -1,4 +1,4 @@
-export default {
+export default () =>  ( {
   props: {
     value: {
       type: Number,
@@ -15,4 +15,4 @@ export default {
       },
     },
   },
-};
+});

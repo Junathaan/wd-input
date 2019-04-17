@@ -7,24 +7,9 @@
 </template>
 
 <script>
-export default {
-  props: {
-    value: {
-      type: Number,
-      default: 0,
-    }
-  },
-  computed: {
-    twVal: {
-      get() {
-        return this.value;
-      },
-      set(newValue) {
-        this.$emit('input', newValue);
-      },
-    },
-  },
-};
+  import WdInputFactory  from './WdInputFactory'
+  const WdInput = WdInputFactory()
+  export default WdInput
 </script>
 
 <style scoped>
