@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/vue';
 
+import App from '../src/App.vue';
 import WdInput from '../src/WdInput.vue';
 import WdInputBootstrap from '../src/WdInputBootstrap.vue';
-// import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
 
 storiesOf('WdInput', module)
   .add('Basic', () => ({
@@ -21,3 +21,13 @@ storiesOf('WdInput', module)
       <wd-input-bootstrap v-model="value" />
     </div>`
   }));
+
+  storiesOf('App', module)
+    .add('Basic', () => ({
+      components: { App },
+      template: `
+        <div>
+          <App />
+        </div>
+      `
+    }));
