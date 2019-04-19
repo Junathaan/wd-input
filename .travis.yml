@@ -14,6 +14,8 @@ jobs:
     deploy:
       provider: script
       skip_cleanup: true
+      on:
+        branch: travis
       script: npx semantic-release
 env:
   matrix:
