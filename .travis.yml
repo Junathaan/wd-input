@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+- '11'
+jobs:
+  include:
+  - stage: test
+    before_script:
+    - npm install -g @vue/cli-service
+    - npm i -g vue-template-compiler
+    script:
+    - npm run build-bundle
+    - npm run mocha
+  - stage: release
+    deploy:
+      provider: script
+      skip_cleanup: true
+      on:
+        branch: travis
+      script: npx semantic-release
+env:
+  matrix:
+    secure: CpmqbLE/UZ+4Uz/US0IBfbK2e4tfh8v22otqWhq+y9Z+bSNX4Akhea5ui8t2UwL3p3Rvwwtcp8Q/41nYt6v1f7Ad2RFmxY5DmIErT0eBKfCt1rVNqy0gtYTUaZImkUV/gp2nWpF0iDGDl+u3R+iand+fFW6c1OHhXmY4cHwpDQOSr0llNi1BRWkjw7MJXvHLWaLzcGSg2saIOtlIbL7++05bWKp7h4VlX9c1g3ptMNd3Kwo+K5nPJUhV1CnFmP1EOV3hcDP7RsZVU/NQsolYllF/FLbB0fyHVv2MqZwq0HmYLTVcbq7BHTQxSmv6tTE2SxWI/PWYlgKv3fJATjZ1IfwwpEum7qfZCiNIWTrZ9rC5bCjgLWw8fsybqG9JMmeR/u3mDy7IDGGBozeKwR04vv5etOfXcW7pVp2KmICAA1aXXZHIuyaoVu/nW9QYynlZCWMBvtjaQT276iCwUPXMwTHWwV5cdwFsZoyZUCON7ZuyJnNTTOMDlpnySbkzZqgcGrfTb6LX4jWGzq7UFgUiQ+U/pOLbQx679TVbMnhj/puIkwXLKGXLwW6w9Z4Um6FFplwlFl5ba00nieNlrZb8Ted6PO9zufkAj7ZBCfxByLjmWGiTDhUH0EukUlLMlSvz6XZDGDPhkzODJsHd4hfl9WFVX6VUozvhhsG92jCqMxs=

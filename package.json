@@ -1,6 +1,6 @@
 {
   "name": "wd-input",
-  "version": "0.1.1",
+  "version": "0.0.0-development",
   "repository": "junathaan/wd-input",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,7 +10,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "jest": "jest",
-    "mocha": "mocha-webpack --webpack-config config/webpack.config.js --require ./test/setup.js ./test/*.test.js"
+    "mocha": "mocha-webpack --webpack-config config/webpack.config.js --require ./test/setup.js ./test/*.test.js",
+    "semantic-release": "semantic-release"
   },
   "files": [
     "src/*",
@@ -45,9 +46,10 @@
     "mocha-webpack": "^2.0.0-beta.0",
     "vue-jest": "^3.0.4",
     "vue-loader": "^15.7.0",
-    "vue-template-compiler": "^2.5.21",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.30.0",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "semantic-release": "^15.13.3"
   },
   "eslintConfig": {
     "root": true,
@@ -83,5 +85,11 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "release": {
+    "branch": "travis"
+  }
 }
