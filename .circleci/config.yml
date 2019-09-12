@@ -10,11 +10,11 @@
             command: 'sudo npm install -g npm@6.9.0'
         - run:
             name: add-global
-            command: 'sudo npm install -g @vue/cli && sudo npm install -g npx'
+            command: 'sudo npm install -g @vue/cli && sudo npm install -g npx && sudo npm i -g vue-template-compiler'
         - restore_cache:
             key: dependency-cache-{{ checksum "package.json" }}
         - run: npm install
-        - run: npx run build-bundle
+        - run: npm run build-bundle
         - save_cache:
             key: dependency-cache-{{ checksum "package.json" }}
             paths:
