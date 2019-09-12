@@ -7,10 +7,10 @@
         - checkout
         - run:
             name: update-npm
-            command: 'npm install -g npm@6.9.0'
+            command: 'sudo npm install -g npm@6.9.0'
         - run:
             name: add-global-vuecli
-            command: 'npm install -g @vue/cli'
+            command: 'sudo npm install -g @vue/cli'
         - restore_cache:
             key: dependency-cache-{{ checksum "package.json" }}
         - run: npm install
