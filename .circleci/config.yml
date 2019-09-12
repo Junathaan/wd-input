@@ -11,11 +11,11 @@
         - run:
             name: add-global
             command: 'sudo npm install -g @vue/cli && sudo npm install -g npx'
-        - restore_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
+#        - restore_cache:
+#            key: dependency-cache-{{ checksum "package.json" }}
         - run: npm install
-        - save_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
-            paths:
-              - ./node_modules
+#        - save_cache:
+#            key: dependency-cache-{{ checksum "package.json" }}
+#            paths:
+#              - ./node_modules
         - run: npx run build-bundle
