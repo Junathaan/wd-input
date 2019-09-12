@@ -14,8 +14,8 @@
         - restore_cache:
             key: dependency-cache-{{ checksum "package.json" }}
         - run: npm install
+        - run: npx run build-bundle
         - save_cache:
             key: dependency-cache-{{ checksum "package.json" }}
             paths:
               - ./node_modules
-        - run: npx run build-bundle
