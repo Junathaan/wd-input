@@ -1,9 +1,18 @@
- version: 2
- jobs:
-   build:
-     docker:
-       - image: circleci/ruby:2.4.1
-     steps:
-       - checkout
-       - run: npm install
-       - run: npm run build-bundle
+  version: 2
+  jobs:
+    build:
+      docker:
+      - image: circleci/node:11.12.0
+      steps:
+        - checkout
+        - run:
+            name: update-npm
+            command: 'sudo npm install -g npm@6.9.0'
+        - restore_cache:
+            key: dependency-cache-{{ checksum "package.json" }}
+        - run: npm install
+        - save_cache:
+            key: dependency-cache-{{ checksum "package.json" }}
+            paths:
+              - ./node_modules
+        - run: npm run build-bundle
