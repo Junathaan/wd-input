@@ -4,7 +4,7 @@ build: .env
 	$(DOCKER_COMPOSE) build
 
 run: .env
-	$(DOCKER_COMPOSE) up
+	$(DOCKER_COMPOSE) up -d
 
 kill:
 	$(DOCKER_COMPOSE) kill

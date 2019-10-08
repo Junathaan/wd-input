@@ -43,6 +43,7 @@
   }
   .tw-primary {
     background-color: #1ebd60;
+    background-color: blue;
   }
   .tw-danger {
     background-color: #b92b2b;

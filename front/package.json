@@ -10,7 +10,10 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "jest": "jest",
-    "mocha": "mocha-webpack --webpack-config config/webpack.config.js --require ./test/setup.js ./test/*.test.js"
+    "mocha": "mocha-webpack --webpack-config config/webpack.config.js --require ./test/setup.js ./test/*.test.js",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:ci": "npm run serve & wait-on http://localhost:8080 cy:open"
   },
   "files": [
     "src/*",
@@ -24,6 +27,7 @@
     "vue": "^2.6.6"
   },
   "devDependencies": {
+    "@applitools/eyes-cypress": "^3.8.7",
     "@babel/core": "^7.4.3",
     "@storybook/addon-actions": "^5.0.6",
     "@storybook/addon-links": "^5.0.6",
@@ -35,6 +39,7 @@
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
     "babel-preset-vue": "^2.0.2",
+    "cypress": "^3.4.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "expect": "^24.7.1",
