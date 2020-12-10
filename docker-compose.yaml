@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  node:
+    build:
+      context: docker/node
+    environment:
+      - DOMAIN_NAME=default:${VUE_APP_DOMAIN}
+      - IS_DOCKER=true
+    volumes:
+      - ./:/srv
+    expose:
+      - ${NODE_PORT}
+    command: 'npm run serve'
