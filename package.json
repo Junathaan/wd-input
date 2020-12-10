@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build-bundle": "vue-cli-service build --target lib --name wd ./src/plugin.js",
+    "build-component": "vue-cli-service build --target wc --name hoo-navbar ./src/plugin.js",
     "build-storybook": "build-storybook",
     "cy:ci": "npm run serve & wait-on http://localhost:8080 cy:open",
     "cy:open": "cypress open",
@@ -23,6 +24,7 @@
     "*.js"
   ],
   "dependencies": {
+    "@vue/web-component-wrapper": "^1.2.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },

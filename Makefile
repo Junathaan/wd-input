@@ -44,7 +44,10 @@ fix-lint:                                                         ## Run linter 
 build-lib:
 	$(NPM) run build-bundle
 
-.PHONY: build build-docker clean kill install reset start node stop fix-lint build-lib
+build-component:
+	$(NPM) run build-component
+
+.PHONY: build build-docker clean kill install reset start node stop fix-lint build-lib build-component
 
 ##
 ## Utils
