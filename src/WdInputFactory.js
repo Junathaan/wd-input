@@ -1,8 +1,8 @@
-export default () =>  ( {
+export default () => ({
   props: {
     value: {
       type: Number,
-      default: 0,
+      default: 0
     }
   },
   computed: {
@@ -11,8 +11,8 @@ export default () =>  ( {
         return this.value;
       },
       set(newValue) {
-        this.$emit('input', newValue);
-      },
-    },
-  },
+        this.$emit("input", newValue);
+      }
+    }
+  }
 });
